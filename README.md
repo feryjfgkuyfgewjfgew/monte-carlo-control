@@ -23,9 +23,15 @@ As training progresses, the function tracks the Q-values and the greedy policy d
 ```
 
 def mc_control(env, gamma=1.0,
-               init_alpha=0.5, min_alpha=0.01, alpha_decay_ratio=0.5,
-               init_epsilon=1.0, min_epsilon=0.1, epsilon_decay_ratio=0.9,
-               n_episodes=3000, max_steps=200, first_visit=True):
+               init_alpha=0.5,
+               min_alpha=0.01,
+               alpha_decay_ratio=0.5,
+               init_epsilon=1.0,
+               min_epsilon=0.1,
+               epsilon_decay_ratio=0.9,
+               n_episodes=3000,
+               max_steps=200,
+               first_visit=True):
 
     ns, na = env.observation_space.n, env.action_space.n
     discounts = np.logspace(0, max_steps, num=max_steps, base=gamma, endpoint=False)
